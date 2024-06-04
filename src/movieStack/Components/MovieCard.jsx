@@ -9,7 +9,7 @@ export const MovieCard = () => {
           src={poster}
         />
         <div className="opacity-0 hover:opacity-100 hover:brightness-100 transition ease-out delay-100 absolute inset-0  flex justify-center items-center   ">
-          <button className="bg-blue-700 w-28 h-10  rounded text-white">
+          <button className="bg-blue-700 w-28 h-10 hover:bg-blue-600 rounded text-white">
             Ver más
           </button>
         </div>
