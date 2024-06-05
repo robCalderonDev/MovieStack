@@ -9,10 +9,19 @@ const Footer = () => {
     <div className="bg-slate-100 h-[100%] sticky top-[100vh]">
       <div className="flex justify-center gap-5">
         <div className=" w-10/12 border-b-2  border-gray-400"></div>
-        <FaFacebookSquare size="45" className="pt-4" />
-        <IoLogoInstagram size="45" className="pt-4" />
-        <BsTwitterX size="45" className="pt-4" />
-        <div className=" w-10/12 border-b-2  border-gray-400"></div>
+        <FaFacebookSquare
+          size="45"
+          className="pt-4 hover:fill-slate-700 hover:-translate-y-1 duration-300"
+        />
+        <IoLogoInstagram
+          size="45"
+          className="pt-4 hover:fill-slate-700 hover:-translate-y-1 duration-300"
+        />
+        <BsTwitterX
+          size="45"
+          className="pt-4 hover:fill-slate-700 hover:-translate-y-1 duration-300"
+        />
+        <div className=" w-10/12 border-b-2  border-gray-400 "></div>
       </div>
       <div className="flex justify-center pt-4">
         <img src={logo_sonda} className="" height="30" width="120" />

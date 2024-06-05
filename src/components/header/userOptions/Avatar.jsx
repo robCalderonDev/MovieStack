@@ -22,7 +22,7 @@ export const Avatar = () => {
         <FaUser />
       </button>
       {isOpen && (
-        <div className="origin-top-right absolute right-0 mt-2 w-44 rounded-lg shadow-lg bg-white ring-1 ring-opacity-5 mr-20">
+        <div className="origin-top-right absolute right-0 mt-2 w-44 rounded-lg shadow-lg bg-white ring-1 ring-opacity-5 mr-20 ">
           <ul
             role="menu"
             aria-orientation="vertical"
@@ -31,7 +31,7 @@ export const Avatar = () => {
             <li>
               <a
                 href="#"
-                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex"
+                className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex rounded-t-lg"
                 onClick={closeDropdown}
               >
                 <AiOutlineSetting className="mt-0.5 mr-1" />
@@ -41,7 +41,7 @@ export const Avatar = () => {
             <li>
               <a
                 href="#"
-                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex"
+                className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex rounded-b-lg"
                 onClick={closeDropdown}
               >
                 <BiCameraMovie className="mt-0.5 mr-1" />

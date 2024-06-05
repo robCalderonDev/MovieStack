@@ -9,12 +9,10 @@ export const HomePage = () => {
       </h1>
       <p className="text-center mt-8 mb-5  text-xs lg:mx-0 mx-10">
         Bienvenido al sitio moviestack donde podras revisar todos las peliculas
-        y series en la mejor calidad{" "}
+        y series en la mejor calidad
       </p>
-
       <hr />
-
-      <div className="flex flex-wrap gap-10   justify-center mt-5">
+      <div className="flex flex-wrap gap-10   justify-center mt-5 mb-10">
         <MovieCard />
         <MovieCard />
         <MovieCard />

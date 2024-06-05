@@ -19,7 +19,6 @@ export const SearchBar = () => {
           id="default-search"
           className="block w-80 h-10 p-4 ps-10 text-sm outline-none   border-gray-300 rounded-lg bg-gray-50 dark:bg-slate-100 dark:border-gray-300 dark:placeholder-gray-400 text-slate-600"
           placeholder="Películas, Series, etc"
-          required
         />
 
         <button
