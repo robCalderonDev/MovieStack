@@ -2,7 +2,7 @@ import React from "react";
 import { FaFacebookSquare } from "react-icons/fa";
 import { IoLogoInstagram } from "react-icons/io5";
 import { BsTwitterX } from "react-icons/bs";
-import logo_sonda from "./../../assets/logo_sonda.png";
+import Movie_Stack from "./../../assets/Movie_Stack.png";
 
 const Footer = () => {
   return (
@@ -24,7 +24,7 @@ const Footer = () => {
         <div className=" w-10/12 border-b-2  border-gray-400 "></div>
       </div>
       <div className="flex justify-center pt-4">
-        <img src={logo_sonda} className="" height="30" width="120" />
+        <img src={Movie_Stack} className="" height="30" width="140" />
       </div>
       <p className="text-center text-xs my-2  text-slate-400">
         Copyright @2024 MovieStack
