@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const MovieCard = () => {
   return (
     <div className="lg:w-52 w-40   lg:h-[100%]  ">
-      <div className="relative  hover:brightness-95 ">
+      <div className="relative  hover:brightness-50 ">
         <img
           className=" lg:w-52 w-40 lg:h-72 h-56  bg-slate-600 p-1  duration-300   rounded shadow-md  "
           src={poster}
