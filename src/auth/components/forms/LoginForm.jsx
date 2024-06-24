@@ -8,7 +8,7 @@ const LoginForm = ({ OnLogin }) => {
   };
   return (
     <div className=" mt-4">
-      <div className="w-1/2 mx-auto  ">
+      <div className="lg:w-1/2 w-9/12  mx-auto  ">
         <h1 className="text-xs text-slate-500">Correo</h1>
 
         <input
@@ -27,10 +27,14 @@ const LoginForm = ({ OnLogin }) => {
                focus:border-blue-700  focus:outline-none justify-between focus:border-2  "
           type="password"
         />
-        <div className="w-full mt-1 flex justify-between ">
-          <div className="flex " onClick={onChangeCheckbox}>
-            <input type="checkbox" checked={isChecked} />
-            <p className="text-slate-400 hover:text-slate-500 pt-1 ml-1 text-xs">
+        <div className="w-full mt-1 flex  justify-around">
+          <div className="flex lg:mr-0 mr-10 " onClick={onChangeCheckbox}>
+            <input
+              type="checkbox"
+              checked={isChecked}
+              onChange={onChangeCheckbox}
+            />
+            <p className="text-slate-400  hover:text-slate-500 pt-2.5 lg:pt-1   ml-1  text-xs">
               Recuerdame
             </p>
           </div>

@@ -3,6 +3,7 @@ import { Navbar } from "../../components/header/Navbar";
 import { Navigate, Route, Routes } from "react-router";
 import { HomePage } from "../Pages/HomePage";
 import Footer from "../../components/bottom/Footer";
+import CreateUserPage from "../../auth/pages/CreateUserPage";
 
 export const MovieStackRouter = () => {
   return (

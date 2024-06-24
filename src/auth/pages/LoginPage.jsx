@@ -11,18 +11,28 @@ const LoginPage = () => {
       replace: true,
     });
   };
+  const OnCreateAccount = () => {
+    navigate("/register");
+    const lastPath = localStorage.getItem("lastPath") || "/register";
+    navigate(lastPath, {
+      replace: true,
+    });
+  };
   return (
-    <div className="flex justify-center place-items-center h-screen">
-      <div className="w-3/4 h-96 flex rounded-2xl border-2 border-blue-700 shadow-2xl ">
-        <div className=" w-7/12">
-          <p className="text-center mt-16 text-3xl text-gray-60 font-semibold">
+    <div className="flex justify-center items-center h-screen">
+      <div className="w-3/4 h-fit    flex flex-wrap rounded-2xl border-2 border-blue-700 shadow-2xl">
+        <div className="w-full md:w-7/12">
+          <p className="text-center mt-16 text-3xl text-gray-600 font-semibold">
             Login
           </p>
-
           <LoginForm OnLogin={OnLogin} />
+          <button className="w-full lg:my-5 " onClick={OnCreateAccount}>
+            <p className="text-xs text-center text-gray-400 pt-1  hover:text-gray-500">
+              Registrarse
+            </p>
+          </button>
         </div>
-
-        <div className="bg-white w-5/12 rounded-r-2xl flex items-center align-middle">
+        <div className="bg-white sm:visible sm:w-[80%] lg:ml-0 ml-10 lg:visible invisible w-full md:w-5/12 rounded-r-2xl flex items-center justify-center md:justify-start">
           <img
             className="py-2 pl-6"
             src={Movie_Stack}
