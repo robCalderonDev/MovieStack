@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { FaUser } from "react-icons/fa";
 import { AiOutlineSetting } from "react-icons/ai";
 import { BiCameraMovie } from "react-icons/bi";
+import { useNavigate } from "react-router";
 
 export const Avatar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const navigate = useNavigate();
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -13,6 +14,16 @@ export const Avatar = () => {
   const closeDropdown = () => {
     setIsOpen(false);
   };
+  const OnGoUserConfig = () => {
+  
+    setIsOpen(false);
+    navigate("/UserConfig");
+    const lastPath = localStorage.getItem("lastPath") || "/userConfig";
+    navigate(lastPath, {
+      replace: true,
+    });
+  };
+
   return (
     <div className="  ">
       <button
@@ -32,7 +43,7 @@ export const Avatar = () => {
               <a
                 href="#"
                 className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex rounded-t-lg"
-                onClick={closeDropdown}
+                onClick={OnGoUserConfig}
               >
                 <AiOutlineSetting className="mt-0.5 mr-1" />
                 Configuracion
