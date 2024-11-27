@@ -4,11 +4,12 @@ import { BrowserRouter } from "react-router-dom";
 
 import "./index.css";
 import { AppRouter } from "./router/AppRouter";
+import MovieStackApp from "./MovieStackApp";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <AppRouter />
+      <MovieStackApp />
     </BrowserRouter>
   </React.StrictMode>
 );

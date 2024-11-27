@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const UserConfigForm = props => {
+const UserConfigForm = ({saveChanges}) => {
   return (
     <div className='w-2/5 mt-10 '>
 
@@ -16,7 +16,7 @@ const UserConfigForm = props => {
         <h1 className='mt-4'>Cambiar correo</h1>        
         <input className="w-full h-8 mt-1 placeholder:text-xs pl-2 bg-slate-100 outline-none focus:border-blue-700  focus:outline-none focus:border-2  " type="password" placeholder="Cambiar correo"/>
 
-      <button className="w-[15%] mt-10 h-11 rounded  bg-blue-700 text-white hover:bg-blue-600" >Guardar</button>
+      <button className="w-[15%] mt-10 h-11 rounded  bg-blue-700 text-white hover:bg-blue-600" onClick={saveChanges}>Guardar</button>
         
         
     </div>

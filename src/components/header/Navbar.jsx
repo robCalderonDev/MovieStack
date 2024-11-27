@@ -17,13 +17,17 @@ export const Navbar = () => {
   };
   return (
     <div className="bg-slate-50 pr-16 w-full flex flex-wrap h-14 text-blue-700 justify-between">
+      <button>
       <img
         className="pl-6 h-full py-1" // Añade la clase h-full para que la imagen tome la altura completa del contenedor
+        onClick={() => navigate("/")}
         src={Movie_Stack}
         alt="Logo"
         width={215}
         style={{ maxWidth: "100%" }} // Añade un estilo para que el ancho máximo sea el 100% del contenedor
       />
+      </button>
+      
 
       <SearchBar />
       <div className="flex flex-wrap items-center justify-center space-x-4 mr-4">

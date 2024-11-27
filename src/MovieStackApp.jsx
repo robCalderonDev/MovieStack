@@ -4,6 +4,7 @@ import { AuthProvider } from "./auth/context/AuthProvider";
 function MovieStackApp() {
   return (
     <>
+
       <AuthProvider>
         <AppRouter />
       </AuthProvider>

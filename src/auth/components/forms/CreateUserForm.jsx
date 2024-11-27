@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ValidationSchemaUser } from "../../schemas/validationsForm";
 import { ClipLoader } from "react-spinners";
-const CreateUserForm = ({ OnGoHome }) => {
+const CreateUserForm = ({ handleCreate }) => {
   const [loading, setLoading] = useState(false);
   const {
     register,
@@ -14,10 +14,10 @@ const CreateUserForm = ({ OnGoHome }) => {
     resolver: yupResolver(ValidationSchemaUser),
   });
   const onSubmitHandler = (data) => {
-    console.log({ data });
-    reset();
     setLoading(true);
-    OnGoHome();
+    handleCreate(data,setLoading);
+    reset();
+  
   };
 
   return (
@@ -26,7 +26,7 @@ const CreateUserForm = ({ OnGoHome }) => {
         <h1 className="text-xs text-slate-500">Nombre</h1>
 
         <input
-          {...register("nombre")}
+          {...register("name")}
           placeholder="Confusio flores"
           className="w-full h-8 mt-1 placeholder:text-xs pl-2
         bg-slate-100

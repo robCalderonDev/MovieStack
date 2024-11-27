@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { MovieCard } from "../Components/MovieCard";
+import { AuthContext } from "../../auth/context/AuthContext";
 
 export const HomePage = () => {
+  const { user, login, logout } = useContext(AuthContext);
+
+  useEffect(() => {
+ 
+   console.log(user)
+   
+  }, [])
+  
   return (
     <div>
       <h1 className="text-4xl text-center font-bold mt-16 lg:mx-0 mx-5">
+        {user && `Bienvenido ${user.name}`}
         Las mejores peliculas hd de calidad
       </h1>
       <p className="text-center mt-8 mb-5  text-xs lg:mx-0 mx-10">
