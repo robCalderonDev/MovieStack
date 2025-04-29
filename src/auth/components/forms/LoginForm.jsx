@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 
 const LoginForm = ({ OnLogin }) => {
+  const [mail, setMail] = useState("");
+  const [password, setPassword] = useState("");
   const [isChecked, setIsChecked] = useState(false);
 
   const onChangeCheckbox = () => {
     setIsChecked(!isChecked);
   };
+
   return (
     <div className=" mt-4">
       <div className="lg:w-1/2 w-9/12  mx-auto  ">
@@ -17,6 +20,7 @@ const LoginForm = ({ OnLogin }) => {
               outline-none
                focus:border-blue-700  focus:outline-none focus:border-2  "
           type="email"
+          onChange={(e) => setMail(e.target.value)}
         />
 
         <h1 className="text-xs mt-5 text-slate-500">Contraseña</h1>
@@ -26,6 +30,7 @@ const LoginForm = ({ OnLogin }) => {
               outline-none
                focus:border-blue-700  focus:outline-none justify-between focus:border-2  "
           type="password"
+          onChange={(e) => setPassword(e.target.value)}
         />
         <div className="w-full mt-1 flex  justify-around">
           <div className="flex lg:mr-0 mr-10 " onClick={onChangeCheckbox}>
@@ -46,7 +51,7 @@ const LoginForm = ({ OnLogin }) => {
       <div className=" mx-auto text-center mt-5">
         <button
           className="w-[50%] h-11 rounded  bg-blue-700 text-white hover:bg-blue-600"
-          onClick={OnLogin}
+          onClick={()=>OnLogin(mail, password)}
         >
           Acceder
         </button>

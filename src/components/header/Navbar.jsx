@@ -7,10 +7,13 @@ import { AuthContext } from "../../auth/context/AuthContext";
 import { SearchBar } from "./SearchBar";
 
 export const Navbar = () => {
-  // const { user, logout } = useContext(AuthContext)
+   const {setUser, user, logout } = useContext(AuthContext)
   const navigate = useNavigate();
   const onLogOut = () => {
     if (confirm("Seguro que quieres Cerrar Sesion?")) {
+      localStorage.removeItem("user"); // Eliminar del localStorage
+      localStorage.removeItem("token"); // Eliminar el token del localStorage
+      setUser(null); // Limpiar el estado local
       alert("Se ha cerrado sesion!");
       navigate("/login", { replace: true });
     }

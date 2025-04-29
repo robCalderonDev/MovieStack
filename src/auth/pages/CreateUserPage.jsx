@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router";
 import Movie_Stack from "./../../assets/Movie_Stack.png";
 import CreateUserForm from "../components/forms/CreateUserForm";
-import Test from "../components/forms/Test";
-import axios from "../api/axios";
+import api from "../api/axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from "../context/AuthProvider";
@@ -20,36 +19,47 @@ const CreateUserPage = () => {
       replace: true,
     });
   };
-
   const handleCreate = async (values, setLoading) => {
     const { name, email, password } = values;
-
+  
     try {
-        const payload = { name, email, password };
-
-        const response = await axios.post(
-            REGISTER_URL,
-            payload,
-            {
-                headers: { "Content-Type": "application/json" },
-                withCredentials: true,
-            }
-        );
-        console.log(user)
-        setUser(response.data.user); // Enviar el nuevo usuario al contexto global
-        toast.success("Cuenta creada con éxito!");
-        OnGoHome();
-        // Otras acciones que quieras realizar después de crear el usuario
-
-    } catch (err) {
-        if (err.response) {
-            const errorMessage = err.response.data?.error || "Error inesperado del servidor.";
-            toast.error(errorMessage);
+      const payload = { name, email, password };
+  
+      const response = await api.post(
+        REGISTER_URL,
+        payload,
+        {
+          headers: { "Content-Type": "application/json" },
+          withCredentials: true,
         }
+      );
+  
+      const data = response.data;
+  
+      if (data.message === 'User Created Sucessfully') {
+        const user = data.publicUser;
+        localStorage.setItem('user', JSON.stringify(user));
+        setUser(user);
+        toast.success('¡Usuario creado con éxito!');
+        OnGoHome();
+        console.log(user)
+      } 
+      if (data.error === 'Email already in use') {
+        toast.error('Email ya en uso');
+      }
+      if (data.error === 'User already exists') {
+        toast.error('Usuario ya existe');
+      }
+  
+    } catch (err) {
+      const errorMessage = err.response?.data?.error || "Error inesperado del servidor.";
+      toast.error(errorMessage);
+      console.error('Error al crear usuario:', err);
     } finally {
-        setLoading(false);
+      setLoading(false);
     }
-};
+  };
+  
 
   
 

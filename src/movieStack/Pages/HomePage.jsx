@@ -1,12 +1,13 @@
 import React, { useContext, useEffect } from "react";
 import { MovieCard } from "../Components/MovieCard";
 import { AuthContext } from "../../auth/context/AuthContext";
+import { ToastContainer } from "react-toastify";
 
 export const HomePage = () => {
   const { user, login, logout } = useContext(AuthContext);
-
+  console.log(user, "user desde el home");
   useEffect(() => {
- 
+    
    console.log(user)
    
   }, [])
@@ -32,6 +33,7 @@ export const HomePage = () => {
         <MovieCard />
         <MovieCard />
       </div>
+     
     </div>
   );
 };
